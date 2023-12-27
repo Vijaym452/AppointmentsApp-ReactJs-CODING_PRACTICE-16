@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {v4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 import {format} from 'date-fns'
 
 import AppointmentItem from '../AppointmentItem'
@@ -48,7 +48,7 @@ class Appointments extends Component {
       ? format(new Date(dateInput), 'dd MMMM yyyy, EEEE')
       : ''
     const newAppointment = {
-      id: v4(),
+      id: uuidv4(),
       title: titleInput,
       date: formattedDate,
       isStarred: false,
